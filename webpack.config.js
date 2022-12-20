@@ -11,12 +11,20 @@ module.exports = {
             title: 'Output Management',
         })
     ],
+
+    devtool: 'inline-source-map',
+    devServer: {
+        static: './dist'
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
-    mode: 'production',
+    optimization: {
+        runtimeChunk: 'single'
+    },
+    mode: 'development',
     module: {
         rules: [
             {
